@@ -23,3 +23,8 @@ post('/collections') do
   @collections = Organizer.all()
   erb(:success)
 end
+
+get('/collections/:id') do
+  @collection = Organizer.find(params.fetch('id').to_i())
+  erb(:collection)
+end
