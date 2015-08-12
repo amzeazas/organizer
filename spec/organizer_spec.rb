@@ -60,4 +60,12 @@ describe(Organizer) do
       expect(test_organizer.discs()).to(eq([test_CD]))
     end
   end
+  describe('#find_artist') do
+    it("finds all CDs in an organizer by a single artist") do
+      test_organizer = Organizer.new("Alexa's tunes")
+      test_CD = CD.new("A Night at the Opera", "Queen")
+      test_organizer.add_CD(test_CD)
+      expect(test_organizer.find_artist("Queen")).to(eq(["A Night at the Opera"]))
+    end
+  end
 end
