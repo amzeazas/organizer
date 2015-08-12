@@ -28,3 +28,18 @@ get('/collections/:id') do
   @collection = Organizer.find(params.fetch('id').to_i())
   erb(:collection)
 end
+
+get('collections/:id/cds/new') do
+  @collection = Organizer.find(params.fetch('id').to_i())
+  erb(:collection_cd_form)
+end
+
+post('/cds') do
+  title = params.fetch('title')
+  artist = params.fetch('artist')
+  @cd = CD.new(title, artist)
+  @cd.save()
+  @collection = Organizer.find(params.fetch('collection_id').to_i())
+  @colelction.add_cd(@cd)
+  erb(:success)
+end
