@@ -43,3 +43,10 @@ post('/cds') do
   @colelction.add_cd(@cd)
   erb(:success)
 end
+
+get('/cds/:id') do
+  @cd = CD.find(params.fetch('id').to_i())
+  @title = @cd.title()
+  @artist = @cd.artist()
+  erb(:cd)
+end
