@@ -1,0 +1,10 @@
+<h3>Here are all the albums in this collection</h3>
+
+<ul>
+  <% @collection.discs().each() do |disc| %>
+  <li><a href="/cds<%= disc.id() %>"><%= disc.title() %> <%= disc.artist() %></a></li>
+  <% end %>
+</ul>
+
+<a href="/collections/<%= @collection.id %>/cds/new">Add a new album</a>
+<a href="/">Return to Main Page</a>
