@@ -36,7 +36,7 @@ describe(Organizer) do
       expect(Organizer.all()).to(eq([test_organizer]))
     end
   end
-  describe('#clear') do
+  describe('.clear') do
     it('empties out all of the saved organizers') do
       Organizer.new("Alexa's tunes").save()
       Organizer.clear()
@@ -56,7 +56,7 @@ describe(Organizer) do
     it("adds a new CD to an organizer") do
       test_organizer = Organizer.new("Alexa's tunes")
       test_CD = CD.new("A Night at the Opera", "Queen")
-      test_dealership.add_CD(test_CD)
+      test_organizer.add_CD(test_CD)
       expect(test_organizer.discs()).to(eq([test_CD]))
     end
   end
