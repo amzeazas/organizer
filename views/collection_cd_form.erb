@@ -1,0 +1,13 @@
+<h1>Add an album to <%= @collection.name() %></h1>
+
+<form action"/cds" method="post">
+  <input id='collections_id' name='collections_id' type='hidden' value='<%= @collection.id() %>'>
+
+  <label for='title'>Album title:</label>
+  <input id='title' name='title' type='text'>
+
+  <label for='artist'>Album artist:</label>
+  <input id='artist' name='artist' type='text'>
+
+  <button type="submit">Add Album</button>
+</form>
