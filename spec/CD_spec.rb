@@ -20,4 +20,9 @@ describe('CD') do
       expect(test_CD.artist()).to(eq("The Lonely Island"))
     end
   end
+  describe(".all") do
+    it('is empty at first') do
+      expect(CD.all()).to(eq([]))
+    end
+  end
 end
