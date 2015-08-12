@@ -43,5 +43,16 @@ class Organizer
 
   define_method(:add_CD) do |album|
     @discs.push(album)
-  end  
+  end
+  define_method(:find_artist) do |artist|
+    @artist = artist
+    total_discs = @discs
+    artist_albums = []
+    total_discs.each() do |album|
+      if album.include?(@artist)
+        artist_albums.push(album)
+      end
+      artist_albums
+    end
+  end
 end

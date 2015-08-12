@@ -65,6 +65,7 @@ describe(Organizer) do
       test_organizer = Organizer.new("Alexa's tunes")
       test_CD = CD.new("A Night at the Opera", "Queen")
       test_organizer.add_CD(test_CD)
+      test_organizer.save()
       expect(test_organizer.find_artist("Queen")).to(eq(["A Night at the Opera"]))
     end
   end
