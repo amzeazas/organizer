@@ -7,3 +7,7 @@ require('./lib/organizer')
 get('/') do
   erb(:index)
 end
+
+get('/collections/new') do
+  erb(:collections_form)
+end
