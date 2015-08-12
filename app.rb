@@ -11,3 +11,8 @@ end
 get('/collections/new') do
   erb(:collections_form)
 end
+
+get('/collections') do
+  @collections = Organizer.all()
+  erb(:collections)
+end
