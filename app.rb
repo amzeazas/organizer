@@ -16,3 +16,10 @@ get('/collections') do
   @collections = Organizer.all()
   erb(:collections)
 end
+
+post('/collections') do
+  name = params.fetch('name')
+  Organizer.new(name).save()
+  @collections = Organizer.all()
+  erb(:success)
+end
